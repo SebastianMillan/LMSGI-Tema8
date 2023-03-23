@@ -36,3 +36,73 @@ if(numero1<0 || numero1!=0){
 if(numero1+1<numero2){
     alert("Incrementar en 1 unidad el valor de numero1 no lo hace mayor o igual a numero2")
 }
+
+//Ejercicio 6
+let letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T']; 
+let numDNI, letraDNI, indexLetraDNIObt;
+
+numDNI = prompt("Indique el número de DNI");
+letraDNI = prompt("Indique la letra de DNI");
+
+if (numDNI < 0 || numDNI > 99999999) {
+    alert("El número de DNI introducido no es válido");
+} else {
+    indexLetraDNIObt = numDNI % 23;
+    if (letraDNI == letras[indexLetraDNIObt]) {
+        alert("DNI correcto: "+numDNI+letraDNI)
+    } else {
+        alert("La letra que ha indicado es incorrecta");
+    }
+}
+
+//Ejercicio 7
+let num=0, resultado=1;
+
+num = prompt("Indique el número entero para realizar su factorial");
+for (let i = 0; i < num; i++) {
+    resultado *= num - i;
+}
+alert("El resultado de !" + num + " es: " + resultado);
+
+//Ejercicio 8
+let num1 = prompt("Indique un número");
+
+function comprobarParImpar(num) {
+    if (num % 2 == '0') {
+        alert(num + " es par");
+    } else {
+        alert(num + " es impar");
+    }
+}
+
+comprobarParImpar(num1);
+
+//Ejercicio 9
+let texto = prompt("Indique un texto");
+
+function comprobarMayusc(texto) {
+    if (texto == texto.toUpperCase()) {
+        alert("El texto está todo en mayúsculas");
+    } else if (texto == texto.toLowerCase()) {
+        alert("El texto está todo en minúsculas");
+    } else {
+        alert("El texto está tanto en mayúsculas como en minúsculas");
+    }  
+}
+
+comprobarMayusc(texto);
+
+//Ejercicio 10
+let textoPolind = prompt("Indique un texto");
+function comprobarPalindromo(textoPolind) {
+    let textoArrayTrans = textoPolind.split(" ").join("").split("");
+    for (let i = 0; textoArrayTrans.length<=1 ; i++) {
+        if (textoArrayTrans.pop === textoArrayTrans.shift) {
+            alert("Este texto es un palíndromo");
+        } else {
+            alert("Este texto no es un palíndromo");
+        }
+    }
+}
+comprobarPalindromo(textoPolind);
+
