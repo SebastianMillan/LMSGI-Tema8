@@ -66,3 +66,40 @@ function multiplicar(num1, num2){
     return num1*num2;
 }
 alert("El resultado de la multiplicación es "+multiplicar(35,22));
+
+let listaNum= new Array();
+for (let index = 0; index <= 10; index++) {
+    listaNum[index]=index*2;
+}
+for (let index = 0; index <= 10; index++) {
+    alert(listaNum[index]);    
+}
+
+let palabrasss = new Array();
+let salir = false;
+let palab;
+
+do {
+    palab=prompt("Diga una palabra");
+    if(palab!=='0'){
+        palabrasss.push(palab);
+    }else{
+        salir=true;
+    }
+} while (!salir);
+alert(palabrasss.join(' '));
+
+let palabrasss2 = ["Esta", "clase", 'es', "guay"];
+let salir2 = false;
+let palab2;
+
+do {
+    palab2=prompt("Diga una palabra");
+    if(palab2!=='0'){
+        palabrasss.pop();
+        palabrasss2.push(palab2);
+        alert(palabrasss2.join(' '));
+    }else{
+        salir2=true;
+    }
+} while (!salir2);
