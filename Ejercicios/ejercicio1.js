@@ -48,7 +48,7 @@ if (numDNI < 0 || numDNI > 99999999) {
     alert("El número de DNI introducido no es válido");
 } else {
     indexLetraDNIObt = numDNI % 23;
-    if (letraDNI == letras[indexLetraDNIObt]) {
+    if (letraDNI.toUpperCase === letras[indexLetraDNIObt]) {
         alert("DNI correcto: "+numDNI+letraDNI)
     } else {
         alert("La letra que ha indicado es incorrecta");
@@ -59,10 +59,14 @@ if (numDNI < 0 || numDNI > 99999999) {
 let num=0, resultado=1;
 
 num = prompt("Indique el número entero para realizar su factorial");
-for (let i = 0; i < num; i++) {
-    resultado *= num - i;
+if(isFinite(num)){
+    for (let i = 0; i < num; i++) {
+        resultado *= num - i;
+    }
+    alert("El resultado de !" + num + " es: " + resultado);
+}else{
+    alert("Pon un número por favor");
 }
-alert("El resultado de !" + num + " es: " + resultado);
 
 //Ejercicio 8
 let num1 = prompt("Indique un número");
@@ -96,7 +100,7 @@ comprobarMayusc(texto);
 let textoPolind = prompt("Indique un texto");
 function comprobarPalindromo(textoPolind) {
     let textoArrayTrans = textoPolind.split(" ").join("").split("");
-    for (let i = 0; textoArrayTrans.length<=1 ; i++) {
+    for (let i = 0; i<textoArrayTrans.length ; i++) {
         if (textoArrayTrans.pop === textoArrayTrans.shift) {
             alert("Este texto es un palíndromo");
         } else {
@@ -105,4 +109,33 @@ function comprobarPalindromo(textoPolind) {
     }
 }
 comprobarPalindromo(textoPolind);
+
+//Ejercicio 11
+let tamArray = prompt("Indique el tamaño del array");
+let miArray= new Array();
+let sumaTotal=0;
+let nuevoNum=0;
+for (let i = 0; i < tamArray; i++) {
+    miArray[i]=prompt("Indique un número para introducir");
+}
+do {
+    for (let i = 0; i < miArray.length; i++) {
+        alert(miArray[i]);
+    }
+    for (let i = 0; i < miArray.length; i++) {
+        sumaTotal+=parseInt(miArray[i]);
+    }
+    alert("Suma total: "+sumaTotal);
+    nuevoNum=prompt("Indique un nuevo número a introducir (Pulse un número negativo para salir)")
+    miArray.shift();
+    miArray.push(nuevoNum);
+}while(nuevoNum>=0);
+
+//Ejercicio 12
+let miArrayNum=[102,5,33,82,2,66,13];
+alert("Array sin ordenar")
+miArrayNum.forEach(num => alert(num));
+miArrayNum.sort((num1, num2) => num1>num2?1:(num1<num2?-1:0));
+alert("Array ordenado")
+miArrayNum.forEach(num => alert(num));
 
