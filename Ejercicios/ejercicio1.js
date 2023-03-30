@@ -97,6 +97,7 @@ function comprobarMayusc(texto) {
 comprobarMayusc(texto);
 
 //Ejercicio 10
+/*
 let textoPolind = prompt("Indique un texto");
 function comprobarPalindromo(textoPolind) {
     let textoArrayTrans = textoPolind.split(" ").join("").split("");
@@ -109,6 +110,16 @@ function comprobarPalindromo(textoPolind) {
     }
 }
 comprobarPalindromo(textoPolind);
+*/
+function esPalindromo(texto){
+    let delVesre = texto.split('').reverse().join('');
+    if(texto.toUpperCase==delVesre.toUpperCase){
+        alert("Es palindromo")
+    }else{
+        alert("No es palíndromo")
+    }
+}
+esPalindromo(prompt("Indique una palabra para comprobar si es palindromo"));
 
 //Ejercicio 11
 let tamArray = prompt("Indique el tamaño del array");
