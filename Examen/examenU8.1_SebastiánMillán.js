@@ -9,7 +9,7 @@ function camelize(str) {
     let letras = str.split('-');
     let camelCaseStr = letras[0];
     for (let i = 1; i < letras.length; i++) {
-      camelCaseStr += letras[i].charAt(0).toUpperCase() + letras[i].slice(1);
+      camelCaseStr = letras[i].charAt(0).toUpperCase() + letras[i].slice(1);
     }
     return camelCaseStr;
 }

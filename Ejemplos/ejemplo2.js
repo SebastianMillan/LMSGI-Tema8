@@ -1,3 +1,4 @@
+/*
 let boton2 = document.getElementById("boton2");
 boton2.addEventListener("click",crearParrafo);
 
@@ -40,6 +41,33 @@ function crearAlumno(){
     nuevaFila.lastElementChild.innerHTML = ++indice;
     document.querySelector("table").append(nuevaFila);
 }
+*/
+
+let cambiar = document.getElementById("botonCambiar");
+cambiar.addEventListener("click",cambiarTamanoImg);
+
+let ocultar = document.getElementById("botonOcultar");
+ocultar.addEventListener("click",ocultarImg);
+ocultar.addEventListener("click",cambiarBoton);
+
+
+function cambiarBoton(){
+    ocultar.classList.toggle("btn-primary");
+    ocultar.classList.toggle("btn-danger");
+    ocultar.innerHTML="mostrar";
+}
+
+function cambiarTamanoImg(){
+    let tamanoSelec = prompt("Indique el tamaño de la imagen");
+    let img = document.querySelector("img");
+    img.width = tamanoSelec;
+
+}
+function ocultarImg(){
+    let img = document.querySelector("img");
+    img.hidden=!img.hidden;
+}
+
 
 
 
